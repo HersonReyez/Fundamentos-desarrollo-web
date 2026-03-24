@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+}
+
+.header{
+    width: 100vw;
+    height: 76PX;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+}
+
+.titulo{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.contenedor{
+    display: flex;
+}
+
+.elemento{
+    height: 100vh;
+    width: 25vw;
+    text-align: center;
+    padding-top: 24px;
+    background-color: gray;
+}

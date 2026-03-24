@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+}
+
+.contenedor{
+    width: 100vw;
+}
+
+.elemento{
+    width: 33%;
+    float: left;
+}
+
+@media (width <= 600px){
+    .elemento{
+        width: 100%;
+    }
+}
+
+@media (600px <= width <= 1200px){
+    .elemento{
+        width: 33%;
+    }
+    .elemento3{
+        width: 100%;
+    }
+}
