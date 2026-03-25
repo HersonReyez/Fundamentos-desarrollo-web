@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RickyAndMorty</title>
+    
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .element{
+            width: 200px;
+            height: 200px;
+            background-color:aquamarine;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body onload="cargar()">
+    <div class="container"></div>
+
+    <script>
+        const container = document.querySelector(".container");
+
+        async function cargar(){
+            const result = await fetch("https://rickandmortyapi.com/api/character").then(response => response.json());
+
+            //console.log(result);
+
+            const personajes = result.results;
+
+            for(let i = 0; i < personajes.length; i++){
+                console.log(personajes[i].image);
+                console.log(personajes[i].name);
+
+                let element = document.createElement("div");
+                element.className = "element";
+
+                let nombre = document.createElement("p");
+                nombre.textContent = personajes[i].name;
+
+                let imagen = document.createElement("img");
+                imagen.src = personajes[i].image;
+                imagen.width = 100;
+
+
+                element.appendChild(nombre);
+                element.appendChild(imagen);
+
+
+                container.appendChild(element);
+            }
+        }
+    </script>
+</body>
+</html>
