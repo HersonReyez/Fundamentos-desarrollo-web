@@ -8,10 +8,12 @@ body{
     color: white;
 }
 
-
+a{
+    color: white;
+    text-decoration: none;
+}
 
 header{
-    background-color: blueviolet;
     width: 100vw;
     height: 50px;
     display: flex;
@@ -29,22 +31,21 @@ header{
 }
 
 main{
-    width: 100vw;
     display: flex;
     flex-wrap: wrap;
 }
 
 .contenido{
-    background-color: cornflowerblue;
     width: 67%;
+    margin-top: 25px;
 }
 
 aside{
-    background-color:chocolate;
     width: 33%;
+    margin-top: 25px;
 }
 
-@media (width <= 800px){
+@media (width <= 1000px){
     .contenido{
         width: 100%;
     }
@@ -54,28 +55,51 @@ aside{
 }
 
 /* Estilos Index */
-
 .reviews{
-    background-color:blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    /*
+    flex-wrap: wrap-reverse;
+    align-content: center
+    */
 }
 
 .review{
+    width: 90%;
     display: flex;
     justify-content:space-evenly;
+    border: 1px solid aquamarine;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 10px;
+
 }
 
-.usuarios{
-    background-color: grey;
+.imagen{
+    background-color: aqua;
+    margin: 5px;
+    width: 75px;
+    height: 75px;
 }
 
-.usuario{
-    display: flex;
-    justify-content:space-evenly;
+.foto{
+    background-color: aqua;
+    margin: 5px;
+    width: 50px;
+    height: 50px;
 }
 
 /* Estilos Perfil */
-.perfil{
+.account{
     width: 100vw;
+}
+
+.perfil{
     display: flex;
-    justify-content:space-evenly;
+    justify-content: left;
+    margin: 25px;
 }
