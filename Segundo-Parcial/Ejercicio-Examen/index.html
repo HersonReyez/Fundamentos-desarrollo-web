@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+
+        header{
+            text-align: center;
+        }
+
+        .contenedor{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .elemento{
+            background-color: aqua;
+            display: flex;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tareas</h1>
+        <input class="texto" type="text">
+        <button type="button" onclick="agregarTarea()">Agregar Tarea</button> 
+    </header>
+    <div class="contenedor">
+    </div>
+    
+    <script>
+        const container = document.querySelector(".contenedor");
+        const texto = document.querySelector(".texto");
+        let counter = 0;
+
+        function agregarTarea(){
+            counter++;
+
+            const element = document.createElement("div");
+            element.className = "elemento";
+            element.id = counter;
+
+             const textoElemento = document.createElement("span");
+             textoElemento.textContent = texto.value;
+
+            const boton = document.createElement("button");
+            boton.textContent = "Completar";
+
+            boton.onclick = function() {
+                completarTarea(element);
+            };
+
+            const boton2 = document.createElement("button");
+            boton2.textContent = "Borrar";
+
+            boton2.onclick = function() {
+                borrarTarea(element);
+            };
+
+            element.appendChild(boton2);
+            element.appendChild(textoElemento);
+            element.appendChild(boton);
+
+            container.appendChild(element);
+            texto.value = "";
+        }
+
+        function completarTarea(elemento){
+            elemento.style.backgroundColor = "blue";
+        }
+
+        function borrarTarea(elemento){
+            elemento.style.display = "none";
+        }
+
+    </script>
+    
+</body>
+</html>
